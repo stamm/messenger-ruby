@@ -3,9 +3,9 @@ module Messenger
     class Message
       include Callback
 
-      attr_accessor :mid, :seq, :sticker_id, :text, :attachments
+      attr_accessor :mid, :seq, :sticker_id, :text, :attachments, :is_echo, :app_id
 
-      def initialize(mid:, seq:, sticker_id: nil, text: nil, attachments: nil)
+      def initialize(mid:, seq:, is_echo:, app_id:, sticker_id: nil, text: nil, attachments: nil)
         @mid         = mid
         @seq         = seq
         @sticker_id  = sticker_id if sticker_id.present?
